@@ -7,12 +7,12 @@ router.get('/', (req, res) => {
 });
 
 // Exercise Page to reference exercise.html
-router.get('/', (req, res) => {
+router.get('/exercise', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/exercise.html'))
 });
 
 // Stats page to reference status.html
-router.get('/', (req, res) => {
+router.get('/stats', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/stats.html'))
 });
 
