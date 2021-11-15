@@ -20,6 +20,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
     useFindAndModify: false
 });
 
+// Middleware declaration for routes
+app.use(morgan("dev"));
+
 // Routes for data retrieval from DB
 app.use(require('./routes/apiRoutes.js'));
 // Routes for app pages
