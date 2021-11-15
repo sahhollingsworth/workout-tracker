@@ -19,6 +19,18 @@ As a user, I want to be able to view create and track daily workouts. I want to 
 This application uses a Mongo database with a Mongoose schema and handles routeing with Express.
 
 ## Installation
+Ensure you have Node.js installed locally to install packages to and from the public npm registry. Node.js installation documentation.
+
+1. Clone the repository to your local machine.
+
+2. Install application dependencies `npm install`.
+Required when when you first set up the project for local development or use OR if any changes are made to the project's dependencies. More Node information here.
+
+3. From the root folder, add the seed data to your now established database with `npm run seed`
+
+4. Start the application with `npm start` 
+
+5. Open the website in local browser at http://localhost:3000
 
 ## Future Development
 
@@ -44,7 +56,7 @@ Sarah Hollingsworth
 * [LinkedIn](https://www.linkedin.com/in/sarahhollingsworth/)
 
 ## Acknowledgements
-* 
+* [Mongoose walkthrough on virtuals](https://mongoosejs.com/docs/tutorials/virtuals.html#virtuals-in-json), required for total duration calculation on workout schema.
 
 ## License
 * [MIT](https://opensource.org/licenses/MIT) license.
