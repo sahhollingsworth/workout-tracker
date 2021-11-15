@@ -44,6 +44,8 @@ const workoutSchema = new Schema({
             }
         }
     ]
+}, {
+    //total duration calculations?
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);

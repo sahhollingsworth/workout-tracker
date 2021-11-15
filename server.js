@@ -18,10 +18,21 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Connecting to MongoDB via Mongoose
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
-    useNewUrlParser: true,
-    useFindAndModify: false
-});
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+//     useNewUrlParser: true,
+//     useFindAndModify: false
+// });
+
+// Connecting to MongoDB via Mongoose
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/workout',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    }
+);
 
 // Routes for data retrieval from DB
 app.use(require('./routes/apiRoutes.js'));
