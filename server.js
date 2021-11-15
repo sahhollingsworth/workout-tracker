@@ -7,6 +7,9 @@ const morgan = require('morgan');
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+// Middleware declaration for routes
+app.use(morgan("dev"));
+
 // Parse incoming requests with urlencoded payloads and return as objects
 app.use(express.urlencoded({ extended: true }));
 // Return the incoming request objects as JSON objects
@@ -19,9 +22,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
     useNewUrlParser: true,
     useFindAndModify: false
 });
-
-// Middleware declaration for routes
-app.use(morgan("dev"));
 
 // Routes for data retrieval from DB
 app.use(require('./routes/apiRoutes.js'));
