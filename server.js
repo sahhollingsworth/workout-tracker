@@ -20,9 +20,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
     useFindAndModify: false
 });
 
-// DEFINE THE ROUTES LOCATIONS ONCE FILES MADE --------
-// app.use(require('./routes/api.js'));
-// app.use(require('./routes/whatevername'));
+// Routes for data retrieval from DB
+app.use(require('./routes/api.js'));
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
