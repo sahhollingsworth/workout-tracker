@@ -1,9 +1,27 @@
 const router = require('express').Router();
 const Workout = require('../models/workout');
 
+// // Get all workout documents
+// router.get('/api/workouts', (req, res) => {
+//     Workout.find({})
+//     .then(data => {
+//         res.json(data);
+//     })
+//     .catch(err => {
+//         res.status(400).json(err);
+//     });
+// });
+
+
 // Get all workout documents
 router.get('/api/workouts', (req, res) => {
-    Workout.find({})
+    Workout.aggregate([
+        {
+            $addFields: {
+                "totalDuration": { $sum: "$exercises.duration" }
+            }
+        }
+    ])
     .then(data => {
         res.json(data);
     })
@@ -12,9 +30,28 @@ router.get('/api/workouts', (req, res) => {
     });
 });
 
+// // Get most recent workout documents
+// router.get('/api/workouts/range', (req, res) => {
+//     Workout.find({})
+//     // Get only the last 7 workouts
+//     .limit(7)
+//     .then(data => {
+//         res.json(data);
+//     })
+//     .catch(err => {
+//         res.status(400).json(err);
+//     });
+// });
+
 // Get most recent workout documents
 router.get('/api/workouts/range', (req, res) => {
-    Workout.find({})
+    Workout.aggregate([
+        {
+            $addFields: {
+                "totalDuration": { $sum: "$exercises.duration" }
+            }
+        }
+    ])
     // Get only the last 7 workouts
     .limit(7)
     .then(data => {

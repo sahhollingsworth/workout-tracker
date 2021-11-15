@@ -1,6 +1,5 @@
 // Import Mongoose package for schema development
 const mongoose = require("mongoose");
-
 // Use Mongoose Schema
 const Schema = mongoose.Schema;
 
@@ -44,8 +43,6 @@ const workoutSchema = new Schema({
             }
         }
     ]
-}, {
-    //total duration calculations?
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
