@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 
 // Default app PORT for use
-const PORT = process.env.PORT || 5660;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 // Parse incoming requests with urlencoded payloads and return as objects
@@ -24,7 +24,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 // app.use(require('./routes/api.js'));
 // app.use(require('./routes/whatevername'));
 
-
 app.listen(PORT, () => {
-    console.log('App listening on Port ${PORT}!');
+    console.log(`App running on port ${PORT}!`);
 });
