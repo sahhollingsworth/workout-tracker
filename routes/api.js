@@ -7,8 +7,7 @@ const Workout = require("../models/workout");
 // /api/workouts/range
 
 
-// Create new workout document - createWorkout(data = {})
-// /api/workouts
+// Create new workout document 
 router.post('/api/workouts', (req, res) => {
     Workout.create({})
     .then(data => {
@@ -19,10 +18,19 @@ router.post('/api/workouts', (req, res) => {
     });
 });
 
-
-// Add exercise object to most recent workout - addExercise(data)
-// /api/workouts/:id
-
+// Add to (Modify) exercise array from most recent workout document
+router.put('/api/workouts/:id', (req, res) => {
+    Workout.findByIdAndUpdate(req.params.id,
+        { $push: {exercises: req.body} },
+        { new: true, runValidators: true }
+    )
+    .then(data => {
+        res.json(data);
+    })
+    .catch(err => {
+        res.status(400).json(err);
+    });
+});
 
 // Get last Workout - getLastWorkout()
 // /api/workouts
