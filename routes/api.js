@@ -1,10 +1,18 @@
 const router = require("express").Router();
 const Workout = require("../models/workout");
 
-// Get exercise in a given workout by id
+// Get all workout documents
+router.get('/api/workouts', (req, res) => {
+    Workout.find({})
+    .then(data => {
+        res.json(data);
+    })
+    .catch(err => {
+        res.status(400).json(err);
+    });
+});
 
-// getWorkoutsInRange()
-// /api/workouts/range
+// Get most recent workout documents
 router.get('/api/workouts/range', (req, res) => {
     Workout.find({})
     // Get only the last 7 workouts
@@ -16,7 +24,6 @@ router.get('/api/workouts/range', (req, res) => {
         res.status(400).json(err);
     });
 });
-
 
 // Create new workout document 
 router.post('/api/workouts', (req, res) => {
@@ -42,11 +49,5 @@ router.put('/api/workouts/:id', (req, res) => {
         res.status(400).json(err);
     });
 });
-
-// Get last Workout - getLastWorkout()
-// /api/workouts
-
-
-
 
 module.exports = router;
