@@ -10,9 +10,9 @@ const app = express();
 // Parse incoming requests with urlencoded payloads and return as objects
 app.use(express.urlencoded({ extended: true }));
 // Return the incoming request objects as JSON objects
-app.unsubscribe(express.json());
+app.use(express.json());
 // Serve static files in the public directory
-app.use(express.static("public"));
+app.use(express.static('public'));
 
 app.listen(PORT, () => {
     console.log('App listening on Port ${PORT}!');
