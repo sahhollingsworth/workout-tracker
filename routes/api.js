@@ -5,6 +5,17 @@ const Workout = require("../models/workout");
 
 // getWorkoutsInRange()
 // /api/workouts/range
+router.get('/api/workouts/range', (req, res) => {
+    Workout.find({})
+    // Get only the last 7 workouts
+    .limit(7)
+    .then(data => {
+        res.json(data);
+    })
+    .catch(err => {
+        res.status(400).json(err);
+    });
+});
 
 
 // Create new workout document 
