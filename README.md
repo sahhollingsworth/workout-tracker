@@ -25,6 +25,7 @@ This application uses a Mongo database with a Mongoose schema and handles routei
 ## Technologies used
 * [Mongo DB](https://www.mongodb.com/) - The NoSQL database used to support record storage.
 * [Mongoose](https://www.npmjs.com/package/mongoose) - Mongoose is a MongoDB object modeling tool used for all models in this application.
+* [Morgan](https://www.npmjs.com/package/morgan) - HTTP request logger middleware for Node.
 * [Node](https://nodejs.org/en/) - Asynchronous event-driven JavaScript runtime environment that executes JavaScript code outside a web browser
 * [NPM](https://www.npmjs.com/) - Node package manager, used in conjunction with JS and Inquirer to support application logic and Command Line interface.
 * [Expressjs](https://expressjs.com/) - Leveraged for API's, utility methods, and middleware.
