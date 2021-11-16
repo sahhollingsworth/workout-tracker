@@ -40,7 +40,6 @@ Required when when you first set up the project for local development or use OR 
 * [Morgan](https://www.npmjs.com/package/morgan) - HTTP request logger middleware for Node.
 * [Node](https://nodejs.org/en/) - Asynchronous event-driven JavaScript runtime environment that executes JavaScript code outside a web browser
 * [NPM](https://www.npmjs.com/) - Node package manager, used in conjunction with JS and Inquirer to support application logic and Command Line interface.
-* [Dotenv](https://www.npmjs.com/package/dotenv) - Secure MongoDB database information.
 * [Expressjs](https://expressjs.com/) - Leveraged for API's, utility methods, and middleware.
 * [Chart.js](https://www.chartjs.org/) - Javascript charting
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/javascript) - Core app logic
