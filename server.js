@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-require('dotenv').config();
+// require('dotenv').config();
 
 // Default app PORT for use
 const PORT = process.env.PORT || 3000;
@@ -17,12 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve static files in the public directory
 app.use(express.static('public'));
-
-// Connecting to MongoDB via Mongoose
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
-//     useNewUrlParser: true,
-//     useFindAndModify: false
-// });
 
 // Connecting to MongoDB via Mongoose
 mongoose.connect(
