@@ -1,18 +1,6 @@
 const router = require('express').Router();
 const Workout = require('../models/workout');
 
-// // Get all workout documents
-// router.get('/api/workouts', (req, res) => {
-//     Workout.find({})
-//     .then(data => {
-//         res.json(data);
-//     })
-//     .catch(err => {
-//         res.status(400).json(err);
-//     });
-// });
-
-
 // Get all workout documents
 router.get('/api/workouts', (req, res) => {
     Workout.aggregate([
@@ -29,19 +17,6 @@ router.get('/api/workouts', (req, res) => {
         res.status(400).json(err);
     });
 });
-
-// // Get most recent workout documents
-// router.get('/api/workouts/range', (req, res) => {
-//     Workout.find({})
-//     // Get only the last 7 workouts
-//     .limit(7)
-//     .then(data => {
-//         res.json(data);
-//     })
-//     .catch(err => {
-//         res.status(400).json(err);
-//     });
-// });
 
 // Get most recent workout documents
 router.get('/api/workouts/range', (req, res) => {
@@ -63,8 +38,8 @@ router.get('/api/workouts/range', (req, res) => {
 });
 
 // Create new workout document 
-router.post('/api/workouts', (req, res) => {
-    Workout.create({})
+router.post('/api/workouts', ({ body }, res) => {
+    Workout.create(body)
     .then(data => {
         res.json(data);
     })
