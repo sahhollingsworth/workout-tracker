@@ -1,12 +1,8 @@
 # Workout Tracker
-As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
-
-
+Workout Tracker is a simple web application to create, view, and run light analytics on workouts. This application is great to keep track of progress and keep motivated as your maintain your workout routine. You're able to track the core components of any cardio and weight training (resistence) exercise, such as duration, distance, repetitions, and weight.
 
 ## Summary
 [Click here to use the Workout Tracker application.](https://workout-tracker-211115.herokuapp.com/)
-
-![Image of Workout Tracker site](./somefile "screenshot of web development portfolio")
 
 * On site load, user is presented with the option to create a new workout or continue with their last workout.
 * The stats page allows for visbility into light analysis/aggregation of the last 7 workouts:
@@ -15,8 +11,19 @@ As a user, I want to be able to view create and track daily workouts. I want to 
 * User has the ability to:
   * Add exercises to the most recent workout plan.
   * Add new exercises to a new workout plan.
+* Workout Tracker uses a Mongo database with a Mongoose schema, and handles routing with Express.
 
-This application uses a Mongo database with a Mongoose schema and handles routeing with Express.
+### Landing Page
+Either empty or showing data from the last workout if available. Starting point to create a new workout or add exercises to the current workout
+![Image of the landing page of the application](./assets/images/landingpage_screenshot.png "Image of the landing page of the application showing 1 workout with workout analytics for recent workouts")
+
+### Dashboard 
+Light exercise analytics from the last 7 workouts
+![Image of Dashboard](./assets/images/dashboard_screenshot.png "screenshot of Dashboard with workout analytics for recent workouts")
+
+### Workout Editor 
+To add exercises to a new or an existing workout
+![Image of Workout editor](./assets/images/workouteditor_screenshot.png "screenshot of form to input workout, including name, weight, sets, reps, and duration")
 
 ## Installation
 Ensure you have Node.js installed locally to install packages to and from the public npm registry. Node.js installation documentation.
@@ -30,9 +37,7 @@ Required when when you first set up the project for local development or use OR 
 
 4. Start the application with `npm start` 
 
-5. Open the website in local browser at http://localhost:3000
-
-## Future Development
+5. Open the website in your local browser at http://localhost:3000
 
 ## Technologies used
 * [Mongo DB](https://www.mongodb.com/) - The NoSQL database used to support record storage.
@@ -55,8 +60,5 @@ Sarah Hollingsworth
 * [Github](https://github.com/sahhollingsworth)
 * [LinkedIn](https://www.linkedin.com/in/sarahhollingsworth/)
 
-## Acknowledgements
-* [Mongoose walkthrough on virtuals](https://mongoosejs.com/docs/tutorials/virtuals.html#virtuals-in-json), required for total duration calculation on workout schema.
-
 ## License
-* [MIT](https://opensource.org/licenses/MIT) license.
+* Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
