@@ -2,7 +2,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-// require('dotenv').config();
 
 // Default app PORT for use
 const PORT = process.env.PORT || 3000;
